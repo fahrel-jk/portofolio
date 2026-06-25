@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrel Ilham Jaya Kusuma — Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Fahrel Ilham Jaya Kusuma — Informatics Student, Web Developer, UI/UX Enthusiast, and Game Developer.">
+
+    <!-- Google Fonts: Poppins + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (local) -->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <!-- ============================================ -->
+    <!-- LOADING SCREEN                               -->
+    <!-- ============================================ -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <h1 class="loading-logo">FAHREL ILHAM JAYA KUSUMA</h1>
+            <div class="loading-bar-wrapper">
+                <div class="loading-bar" id="loading-bar"></div>
+            </div>
+            <p class="loading-text">Loading portfolio...</p>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CUSTOM CURSOR (Desktop Only)                 -->
+    <!-- ============================================ -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION                                   -->
+    <!-- ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="nav-logo-name">Fahrel Ilham Jaya Kusuma</span>
+                <span class="nav-logo-short">FIJK<span class="accent">.</span></span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skill" class="nav-link">Skills</a></li>
+                <li><a href="#project" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certification" class="nav-link">Certification</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <section class="hero" id="home">
+        <canvas class="particle-canvas" id="particle-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">HELLO, I'M</p>
+                <h1 class="hero-name">
+                    <span class="hero-name-line">FAHREL ILHAM</span>
+                    <span class="hero-name-line">JAYA KUSUMA</span>
+                </h1>
+                <p class="hero-subtitle">INFORMATICS STUDENT</p>
+                <div class="hero-typed-wrapper">
+                    <span class="hero-typed-prefix">&gt;</span>
+                    <span class="hero-typed-text" id="typed-text"></span>
+                    <span class="hero-typed-cursor">|</span>
+                </div>
+                <p class="hero-bio">
+                    A passionate developer focused on building impactful digital experiences
+                    through web development, UI/UX design, and game development.
+                </p>
+                <div class="hero-social">
+                    <a href="https://github.com/fahrel-jk" target="_blank" class="hero-social-link" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fahrel-ilham" target="_blank" class="hero-social-link"
+                        title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/fahrel_ilham/" target="_blank" class="hero-social-link"
+                        title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:fahrelilham@gmail.com" class="hero-social-link" title="Email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#project" class="btn btn-primary">
+                        <i class="fa-solid fa-rocket"></i> View Projects
+                    </a>
+                    <a href="cv_fahrel.pdf" download class="btn btn-outline" id="btn-download-cv">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
+                    <img src="img/foto_profil.png" alt="Fahrel Ilham Jaya Kusuma" id="hero-profile-img">
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" id="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ABOUT SECTION                                -->
+    <!-- ============================================ -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                About <span class="accent">Me</span>
+            </h2>
+            <div class="about-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-text">
+                    <p>Passionate Informatics Management student focused on Web Development, UI/UX Design, and Software
+                        Development. Experienced in building web applications using Laravel, REST APIs, and MySQL,
+                        creating interactive UI/UX prototypes with Figma, and developing games with Unity.</p>
+                    <p>Beyond coding, I actively engage in organizational activities, continuously improve my skills
+                        through certifications and personal projects, and run a camera trading business that strengthens
+                        my communication, problem-solving, and entrepreneurial abilities. I am driven by curiosity,
+                        continuous learning, and the desire to create impactful digital experiences.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                        <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="600">
+                        <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-item" data-aos="zoom-in" data-aos-delay="800">
+                        <span class="stat-number" data-target="2">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Years Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SKILLS SECTION                               -->
+    <!-- ============================================ -->
+    <section class="skills" id="skill">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                My <span class="accent">Skills</span>
+            </h2>
+
+            <!-- Software Skills — Image Grid (Original Style) -->
+            <h3 class="skills-sub-title" data-aos="fade-up">Software <span class="accent">Skill</span></h3>
+            <div class="skills-image-grid">
+                <div class="skill-image-card" data-aos="flip-right" data-aos-delay="0">
+                    <img src="img/microsoft.png" alt="Microsoft Office" class="skill-logo">
+                    <div class="skill-image-overlay"><span>MICROSOFT OFFICE</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-left" data-aos-delay="150">
+                    <img src="img/vscode (2).png" alt="VS Code" class="skill-logo skill-logo-lg">
+                    <div class="skill-image-overlay"><span>VS CODE</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-right" data-aos-delay="300">
+                    <img src="img/xampp.png" alt="XAMPP" class="skill-logo">
+                    <div class="skill-image-overlay"><span>XAMPP</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-left" data-aos-delay="450">
+                    <img src="img/logo_php.png" alt="PHP" class="skill-logo">
+                    <div class="skill-image-overlay"><span>PHP</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-right" data-aos-delay="0">
+                    <img src="img/logo_sql.png" alt="SQL" class="skill-logo">
+                    <div class="skill-image-overlay"><span>SQL</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-left" data-aos-delay="150">
+                    <img src="img/google.png" alt="Google" class="skill-logo">
+                    <div class="skill-image-overlay"><span>GOOGLE</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-right" data-aos-delay="300">
+                    <img src="img/figma.png" alt="Figma" class="skill-logo">
+                    <div class="skill-image-overlay"><span>FIGMA</span></div>
+                </div>
+                <div class="skill-image-card" data-aos="flip-left" data-aos-delay="450">
+                    <img src="img/logo_github.png" alt="GitHub" class="skill-logo">
+                    <div class="skill-image-overlay"><span>GITHUB</span></div>
+                </div>
+            </div>
+
+            <!-- Personal Skills -->
+            <h3 class="skills-sub-title skills-sub-title-mt" data-aos="fade-up">Personal <span
+                    class="accent">Skills</span></h3>
+            <div class="personal-skills" data-aos="fade-up" data-aos-delay="200">
+                <div class="personal-badge">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>Problem Solving</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Team Work</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Communication</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-rotate"></i>
+                    <span>Adaptability</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Time Management</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>Critical Thinking</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span>Creativity</span>
+                </div>
+                <div class="personal-badge">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Fast Learner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROJECTS SECTION                             -->
+    <!-- ============================================ -->
+    <section class="projects" id="project">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                My <span class="accent">Projects</span>
+            </h2>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: Vokatif -->
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100" data-project-id="1">
+                    <div class="project-image-container">
+                        <img src="img/vokatif.png" alt="Vokatif" class="project-img">
+                        <div class="project-image-overlay">
+                            <button class="btn-detail" data-project-id="1">
+                                <i class="fa-solid fa-expand"></i> View Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Pemrogaman Api <span class="accent">Vokatif</span></h3>
+                        <p class="project-desc">Platform manajemen event berbasis web yang memungkinkan pengguna
+                            mencari event, membeli tiket digital, melakukan check-in menggunakan QR Code, serta
+                            mengelola acara melalui dashboard organizer dan admin.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">REST API</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">JWT</span>
+                            <span class="tech-badge">Postman</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/fahrel-jk/Vokatif2" target="_blank" class="btn btn-sm">
+                                <i class="fa-brands fa-github"></i> Github
+                            </a>
+                            <button class="btn btn-sm btn-outline btn-detail" data-project-id="1">
+                                <i class="fa-solid fa-circle-info"></i> Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: CerdasFin -->
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="200" data-project-id="2">
+                    <div class="project-image-container">
+                        <img src="img/cerdasfin.png" alt="CerdasFin" class="project-img">
+                        <div class="project-image-overlay">
+                            <button class="btn-detail" data-project-id="2">
+                                <i class="fa-solid fa-expand"></i> View Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Pemrogaman Web <span class="accent">CerdasFin</span></h3>
+                        <p class="project-desc">Platform edukasi literasi keuangan berbasis web yang menyediakan
+                            modul pembelajaran, pre-test dan post-test, simulasi keuangan, serta sistem gamifikasi untuk
+                            meningkatkan pemahaman pengguna mengenai pengelolaan keuangan.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">Blade</span>
+                            <span class="tech-badge">DomPDF</span>
+                            <span class="tech-badge">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/fahrel-jk/cerdasfin" target="_blank" class="btn btn-sm">
+                                <i class="fa-brands fa-github"></i> Github
+                            </a>
+                            <button class="btn btn-sm btn-outline btn-detail" data-project-id="2">
+                                <i class="fa-solid fa-circle-info"></i> Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Taskku -->
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="300" data-project-id="3">
+                    <div class="project-image-container">
+                        <img src="img/tassku.png" alt="Taskku" class="project-img">
+                        <div class="project-image-overlay">
+                            <button class="btn-detail" data-project-id="3">
+                                <i class="fa-solid fa-expand"></i> View Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Design UI/UX <span class="accent">Taskku</span></h3>
+                        <p class="project-desc">Prototype aplikasi manajemen tugas untuk membantu mahasiswa
+                            mengatur deadline, memantau progres tugas, dan meningkatkan produktivitas melalui antarmuka
+                            yang modern dan mudah digunakan.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Figma</span>
+                            <span class="tech-badge">Design Thinking</span>
+                            <span class="tech-badge">Prototyping</span>
+                            <span class="tech-badge">Usability Testing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.figma.com/proto/dAYUjUK2soaJ9Zfy8WO9al/UAS-UI-UX?node-id=17-3&starting-point-node-id=17%3A2"
+                                target="_blank" class="btn btn-sm">
+                                <i class="fa-brands fa-figma"></i> Prototype
+                            </a>
+                            <button class="btn btn-sm btn-outline btn-detail" data-project-id="3">
+                                <i class="fa-solid fa-circle-info"></i> Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Sport Racer -->
+                <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="400" data-project-id="4">
+                    <div class="project-image-container">
+                        <img src="img/game.png" alt="Sport Racer" class="project-img">
+                        <div class="project-image-overlay">
+                            <button class="btn-detail" data-project-id="4">
+                                <i class="fa-solid fa-expand"></i> View Detail
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Pemrogaman Game <span class="accent">Sport Racer</span></h3>
+                        <p class="project-desc">Game balap 3D berbasis Unity yang dilengkapi sistem checkpoint,
+                            lap counter, ranking pemain, timer balapan, serta AI lawan untuk memberikan pengalaman
+                            bermain yang kompetitif.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Unity</span>
+                            <span class="tech-badge">C#</span>
+                            <span class="tech-badge">3D Modeling</span>
+                            <span class="tech-badge">UI Design</span>
+                        </div>
+                        <div class="project-links">
+                            <button class="btn btn-sm btn-outline btn-detail" data-project-id="4">
+                                <i class="fa-solid fa-circle-info"></i> Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROJECT MODAL                                -->
+    <!-- ============================================ -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="" id="modal-img">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    <div class="modal-section">
+                        <h4>Features</h4>
+                        <ul id="modal-features"></ul>
+                    </div>
+                    <div class="modal-section">
+                        <h4>Tech Stack</h4>
+                        <div class="modal-tech" id="modal-tech"></div>
+                    </div>
+                    <div class="modal-actions" id="modal-actions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- EXPERIENCE SECTION                           -->
+    <!-- ============================================ -->
+    <section class="experience" id="experience">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                My <span class="accent">Experience</span>
+            </h2>
+
+            <div class="experience-grid">
+                <!-- Experience Card 1 -->
+                <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="experience-card-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="experience-card-title">Owner Online Shop</h3>
+                    <span class="experience-card-period">2023 — Present</span>
+                    <h4 class="experience-card-company">Sadflixstuff</h4>
+                    <p class="experience-card-desc">Managing camera buying and selling business, customer relations,
+                        marketing, inventory, and sales.</p>
+                    <button class="btn btn-sm btn-outline exp-detail-btn" data-exp-id="1">
+                        <i class="fa-solid fa-circle-info"></i> Detail
+                    </button>
+                </div>
+
+                <!-- Experience Card 2 -->
+                <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-card-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h3 class="experience-card-title">Popup Market Tenant</h3>
+                    <span class="experience-card-period">MAY 2026</span>
+                    <h4 class="experience-card-company">Project X Market</h4>
+                    <p class="experience-card-desc">Participated in a 3-day popup market event promoting and selling
+                        camera products directly to visitors.</p>
+                    <button class="btn btn-sm btn-outline exp-detail-btn" data-exp-id="2">
+                        <i class="fa-solid fa-circle-info"></i> Detail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EXPERIENCE MODAL                             -->
+    <!-- ============================================ -->
+    <div class="exp-modal" id="exp-modal">
+        <div class="exp-modal-overlay" id="exp-modal-overlay"></div>
+        <div class="exp-modal-content glass-card">
+            <button class="modal-close" id="exp-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="exp-modal-body">
+                <div class="exp-modal-header">
+                    <div class="exp-modal-icon" id="exp-modal-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div>
+                        <h2 id="exp-modal-title"></h2>
+                        <h4 id="exp-modal-company"></h4>
+                        <span class="experience-card-period" id="exp-modal-period"></span>
+                    </div>
+                </div>
+                <p id="exp-modal-desc"></p>
+                <div class="exp-modal-section">
+                    <h4>Highlights</h4>
+                    <ul id="exp-modal-highlights"></ul>
+                </div>
+                <div class="exp-modal-section">
+                    <h4>Recap Photos</h4>
+                    <div class="exp-modal-gallery" id="exp-modal-gallery">
+                        <p class="exp-gallery-empty">No photos added yet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CERTIFICATION SECTION                        -->
+    <!-- ============================================ -->
+    <section class="certification" id="certification">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                My <span class="accent">Certifications</span>
+            </h2>
+
+            <div class="swiper certification-swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="cert-card">
+                            <img src="img/eduwork.png" alt="Eduwork Certificate" class="cert-img" data-cert="1">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="cert-card">
+                            <img src="img/workshop.png" alt="Workshop Certificate" class="cert-img" data-cert="2">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="cert-card">
+                            <img src="img/publicspeaking.png" alt="Public Speaking Certificate" class="cert-img"
+                                data-cert="3">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="cert-card">
+                            <img src="img/entrepreneurship.png" alt="Entrepreneurship Certificate" class="cert-img"
+                                data-cert="4">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="cert-modal" id="cert-modal">
+        <div class="cert-modal-overlay" id="cert-modal-overlay"></div>
+        <div class="cert-modal-content">
+            <img src="" alt="" id="cert-modal-img">
+            <button class="cert-modal-close" id="cert-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- CONTACT SECTION                              -->
+    <!-- ============================================ -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title" data-aos="fade-up">
+                Get In <span class="accent">Touch</span>
+            </h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Feel free to reach out for collaborations or just a friendly hello!
+            </p>
+
+            <div class="contact-grid">
+                <a href="mailto:fahrel24ilham@gmail.com" class="contact-card glass-card" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p>fahrel ilham</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/fahrel-ilham-jaya-kusuma-0b5ab42aa?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+                    target="_blank" class="contact-card glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <h4>LinkedIn</h4>
+                    <p>Fahrel Ilham J.K.</p>
+                </a>
+
+                <a href="https://github.com/fahrel-jk" target="_blank" class="contact-card glass-card"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p>fahrel</p>
+                </a>
+
+                <a href="https://www.instagram.com/fahrel_ilham/" target="_blank" class="contact-card glass-card"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h4>Instagram</h4>
+                    <p>@fahrel_ilham</p>
+                </a>
+
+                <a href="https://wa.me/62895354351749" target="_blank" class="contact-card glass-card"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p>Chat Me</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 <span class="accent">Fahrel Ilham Jaya Kusuma</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- SCRIPTS                                      -->
+    <!-- ============================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
