@@ -105,6 +105,8 @@ ul {
     border: 1px solid var(--glass-border);
     border-radius: var(--radius);
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .glass-card:hover {
