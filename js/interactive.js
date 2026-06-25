@@ -323,39 +323,12 @@ const isTablet = window.innerWidth <= 1024 && window.innerWidth > 768;
 
 
 // ============================================
-// 9. PULL-TO-REFRESH STYLE ANIMATION (Mobile Hero)
+// 9. PULL-TO-REFRESH STYLE ANIMATION (Desktop Hero only)
 // ============================================
 (function initMobileHeroInteraction() {
-    if (!isTouchDevice) return;
-
-    const hero = document.querySelector('.hero');
-    const heroImage = document.querySelector('.hero-image-wrapper');
-    if (!hero || !heroImage) return;
-
-    let startY = 0;
-    let currentY = 0;
-
-    hero.addEventListener('touchstart', (e) => {
-        startY = e.touches[0].clientY;
-    }, { passive: true });
-
-    hero.addEventListener('touchmove', (e) => {
-        currentY = e.touches[0].clientY;
-        const diff = currentY - startY;
-
-        if (diff > 0 && window.scrollY === 0) {
-            const pull = Math.min(diff * 0.3, 40);
-            heroImage.style.transform = `scale(${1 + pull * 0.002}) translateY(${pull * 0.5}px)`;
-        }
-    }, { passive: true });
-
-    hero.addEventListener('touchend', () => {
-        heroImage.style.transform = '';
-        heroImage.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
-        setTimeout(() => {
-            heroImage.style.transition = '';
-        }, 500);
-    });
+    // Disabled: hero image is now in-flow layout, not a background.
+    // Interactive effects on the hero image are desktop-only (GSAP parallax).
+    return;
 })();
 
 

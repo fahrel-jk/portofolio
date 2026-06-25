@@ -417,10 +417,6 @@ ul {
     width: 100%;
 }
 
-.hero-content {
-    flex: 1;
-    min-width: 0;
-}
 
 .hero-greeting {
     font-family: var(--font-secondary);
@@ -525,58 +521,63 @@ ul {
     flex-wrap: wrap;
 }
 
-/* Hero Image — Full Portrait, fills entire right side */
+/* Hero Image — Right column, properly centered */
 .hero-image {
-    position: absolute;
-    top: -5%;
-    right: -3%;
-    width: 58%;
-    height: 110%;
-    z-index: 1;
+    flex: 0 0 45%;
+    max-width: 45%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
     pointer-events: none;
+    min-height: 0;
+    padding: 0; /* Removed excessive empty space */
 }
 
 .hero-image-wrapper {
     position: relative;
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translateY(-80px); /* Naikkan gambar agar sejajar dengan font 'FAHREL ILHAM' */
 }
 
 .hero-image-glow {
     position: absolute;
-    bottom: 0;
+    bottom: -10%;
     left: -20%;
     width: 140%;
-    height: 80%;
+    height: 70%;
     background: radial-gradient(ellipse at center bottom, rgba(88, 246, 232, 0.12) 0%, transparent 70%);
     z-index: 0;
     animation: pulse-glow 4s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .hero-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 65% top;
+    width: auto;
+    height: 750px;
+    max-width: none; /* Key to make it larger than 45% column width */
+    object-fit: contain;
     border-radius: 0;
     border: none;
     position: relative;
     z-index: 1;
-    /* Fade left edge and bottom into background */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, white 25%, white 85%, transparent 100%),
-                        linear-gradient(to bottom, white 65%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image: linear-gradient(to right, transparent 0%, white 25%, white 85%, transparent 100%),
-                linear-gradient(to bottom, white 65%, transparent 100%);
-    mask-composite: intersect;
+    transform: translateX(28%); /* Geser lebih ke kanan */
+    /* Subtle edge fade for seamless integration */
+    -webkit-mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, white 80%, transparent 100%);
     filter: brightness(1.05);
 }
 
-/* hero-content takes only left half */
+/* hero-content takes left side */
 .hero-content {
-    flex: 1;
-    min-width: 0;
+    flex: 0 0 55%;
     max-width: 55%;
+    min-width: 0;
     position: relative;
     z-index: 3;
 }
@@ -1754,107 +1755,58 @@ ul {
         display: flex;
     }
 
-    /* Hero — Profile image becomes full background on mobile/tablet */
+    /* Hero — Stacked layout on tablet */
     .hero {
-        min-height: 100vh;
-        position: relative;
-    }
-
-    .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .hero-image-wrapper {
-        width: 100%;
-        height: 100%;
-    }
-
-    .hero-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 20%;
-        border-radius: 0;
-        border: none;
-        /* Fade bottom into dark, keep top/sides visible */
-        -webkit-mask-image: linear-gradient(to bottom, white 30%, rgba(255,255,255,0.4) 60%, transparent 95%);
-        -webkit-mask-composite: auto;
-        mask-image: linear-gradient(to bottom, white 30%, rgba(255,255,255,0.4) 60%, transparent 95%);
-        mask-composite: add;
-        filter: brightness(0.6);
-    }
-
-    .hero-image-glow {
-        display: none;
+        min-height: auto;
     }
 
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 0;
-        padding-top: 40px;
+        gap: 40px;
+        padding-top: 30px;
         padding-bottom: 60px;
-        min-height: calc(100vh - 80px);
-        justify-content: flex-end;
-        position: relative;
-        z-index: 3;
     }
 
     .hero-content {
+        flex: none;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 100%;
-        z-index: 3;
-    }
-
-    .hero-greeting {
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-name {
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-subtitle {
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        order: 1;
     }
 
     .hero-bio {
         text-align: center;
-        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
-        color: var(--text);
     }
 
     .hero-social {
         justify-content: center;
     }
 
-    .hero-social-link {
-        background: rgba(5, 11, 31, 0.6);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-    }
-
     .hero-buttons {
         justify-content: center;
     }
 
-    .hero-buttons .btn {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+    .hero-image {
+        flex: none;
+        max-width: 100%;
+        order: 2;
+        padding: 0;
     }
 
-    .scroll-indicator {
-        bottom: 16px;
+    .hero-image-wrapper {
+        justify-content: center;
+    }
+
+    .hero-image-wrapper img {
+        max-width: 400px;
+        width: 80%;
+    }
+
+    .hero-image-glow {
+        display: none;
     }
 
     /* Skills */
@@ -1919,13 +1871,14 @@ ul {
         padding-top: 70px;
     }
 
-    .hero-image-wrapper img {
-        object-position: center 15%;
-        filter: brightness(0.5);
+    .hero-container {
+        gap: 30px;
+        padding-bottom: 40px;
     }
 
-    .hero-container {
-        padding-bottom: 40px;
+    .hero-image-wrapper img {
+        width: 300px;
+        max-width: 100%;
     }
 
     .scroll-indicator {
@@ -2037,10 +1990,7 @@ ul {
         font-size: 14px;
     }
 
-    .hero-image-wrapper img {
-        object-position: center 10%;
-        filter: brightness(0.45);
-    }
+
 
     .hero-buttons {
         flex-direction: column;
